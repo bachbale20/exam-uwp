@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="Contact.Pages.SearchContactPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Contact.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <TextBlock FontSize="30" Margin="20">Search Contact</TextBlock>
+        <Grid>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnSubmit" Click="BtnSubmit_Click">Submit</Button>
+            </StackPanel>
+            <TextBox x:Name="search"></TextBox>
+        </Grid>
+    </StackPanel>
+</Page>

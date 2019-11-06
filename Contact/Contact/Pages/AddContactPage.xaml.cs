@@ -14,26 +14,29 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Contact.Model;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Contact
+namespace Contact.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class AddContactPage : Page
     {
-       
-        public MainPage()
+        private ContactModel contactModel;
+        public AddContactPage()
         {
             this.InitializeComponent();
-           
-
+            this.contactModel = new ContactModel();
         }
-
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Entity.Contact contact = new Entity.Contact()
+            {
+                Name = name.Text,
+                PhoneNumber = phoneNumber.Text
+            };
+            contactModel.Insert(contact);
         }
     }
 }

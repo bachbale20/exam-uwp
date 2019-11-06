@@ -5,10 +5,25 @@
     xmlns:local="using:Contact"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:entity="using:Contact.Entity"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <StackPanel>
+        <TextBlock FontSize="30" Margin="20">Search Contact</TextBlock>
+        <Grid>
 
-    </Grid>
+            <ListView x:Name="ListViewSearch">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="entity:Contact">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize="20" FontWeight="Bold" Text="{Binding Name}"></TextBlock>
+                            <NavigationViewItemSeparator Foreground="AliceBlue"></NavigationViewItemSeparator>
+                            <TextBlock FontSize="20" FontWeight="Bold" Text="{Binding PhoneNumber}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </StackPanel>
 </Page>
